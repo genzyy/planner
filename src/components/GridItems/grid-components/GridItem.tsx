@@ -25,9 +25,9 @@ const useStyles = makeStyles({
 });
 
 interface GridItemProps {
-  title?: string;
-  priority?: number;
-  tags?: string[];
+  title: string;
+  priority: number;
+  tags: string[];
 }
 
 const GridItem: React.FC<GridItemProps> = ({ title, priority, tags }) => {
@@ -39,10 +39,10 @@ const GridItem: React.FC<GridItemProps> = ({ title, priority, tags }) => {
       <Card className={classes.root} variant='outlined'>
         <CardContent>
           <Typography variant='h5' component='h2'>
-            Completing the project
+            {title ? title : 'Completing the project'}
           </Typography>
           <Typography className={classes.pos} color='textSecondary'>
-            priority
+            {priority ? priority : 'priority'}
           </Typography>
         </CardContent>
         <CardActions>
